@@ -32,6 +32,10 @@ extern crate serde;
 extern crate num_integer as integer;
 extern crate num_traits as traits;
 
+#[cfg(all(feature = "std", not(feature = "mesalock_sgx")))]	
+#[cfg_attr(test, macro_use)]	
+extern crate std;
+
 use core::cmp;
 use core::fmt;
 use core::hash::{Hash, Hasher};

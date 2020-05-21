@@ -21,33 +21,33 @@ sgx_tstd = { rev = "v1.1.2", git = "https://github.com/apache/teaclave-sgx-sdk.g
 
 [dependencies.num-bigint]
 optional = true
-#version = "0.2.0"
-#default-features = false
-git = "https://github.com/mesalock-linux/num-bigint-sgx"
+default-features = false
+branch = "veracruz"
+git = "https://github.com/veracruz-project/num-bigint.git"
 
 [dependencies.num-integer]
-#version = "0.1.38"
-#default-features = false
-git = "https://github.com/mesalock-linux/num-integer-sgx"
+default-features = false
+branch = "veracruz"
+git = "https://github.com/veracruz-project/num-integer.git"
 
 [dependencies.num-traits]
-#version = "0.2.7"
-#default-features = false
-git = "https://github.com/mesalock-linux/num-traits-sgx"
+default-features = false
+branch = "veracruz"
+git = "https://github.com/veracruz-project/num-traits.git"
 
 [dependencies.serde]
 optional = true
-#version = "1.0.0"
-#default-features = false
-git = "https://github.com/mesalock-linux/serde-sgx"
+version = "1.0.0"
+default-features = false
+#git = "https://github.com/mesalock-linux/serde-sgx"
 
 [features]
-default = ["bigint-std", "std", "mesalock_sgx", "i128"]
+default = ["bigint-std", "std"]
 i128 = ["num-integer/i128", "num-traits/i128"]
-std = ["mesalock_sgx", "num-integer/std", "num-traits/std", "num-integer/mesalock_sgx", "num-traits/mesalock_sgx"]
+std = ["num-integer/std", "num-traits/std"]
 bigint = ["num-bigint"]
-bigint-std = ["bigint", "num-bigint/std", "num-bigint/mesalock_sgx"]
-mesalock_sgx = ["sgx_tstd"]
+bigint-std = ["bigint", "num-bigint/std"]
+mesalock_sgx = ["sgx_tstd", "i128", "num-integer/mesalock_sgx", "num-traits/mesalock_sgx", "num-bigint/mesalock_sgx"]
 
 [build-dependencies]
 autocfg = "0.1.3"
