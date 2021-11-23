@@ -22,17 +22,17 @@ sgx_tstd = { rev = "v1.1.2", git = "https://github.com/apache/teaclave-sgx-sdk.g
 [dependencies.num-bigint]
 optional = true
 default-features = false
-branch = "veracruz"
+branch = "veracruz-v1"
 git = "https://github.com/veracruz-project/num-bigint.git"
 
 [dependencies.num-integer]
 default-features = false
-branch = "veracruz"
+branch = "veracruz-v1"
 git = "https://github.com/veracruz-project/num-integer.git"
 
 [dependencies.num-traits]
 default-features = false
-branch = "veracruz"
+branch = "veracruz-v1"
 git = "https://github.com/veracruz-project/num-traits.git"
 
 [dependencies.serde]
